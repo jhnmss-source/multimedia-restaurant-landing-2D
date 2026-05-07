@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdant Ember | Wild Flavors, Rooted in Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; }
+        
+        .menu-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 2px solid transparent;
+        }
+        .menu-card:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid #10b981;
+            padding-left: 1.5rem;
+            transform: translateX(10px);
+        }
+        .menu-card:hover h3 {
+            color: #10b981;
+        }
+
+        canvas { touch-action: none; cursor: crosshair; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900">
+
+    <nav class="fixed w-full z-50 bg-stone-900/90 text-white py-4 px-8 flex justify-between items-center backdrop-blur-md border-b border-white/10">
+        <div class="text-2xl font-bold tracking-tighter text-emerald-400">VERDANT EMBER</div>
+        <div class="space-x-8 text-sm uppercase tracking-widest font-semibold hidden md:flex">
+            <a href="#about" class="hover:text-emerald-400 transition">Our Story</a>
+            <a href="#menu" class="hover:text-emerald-400 transition">The Menu</a>
+            <a href="#game" class="hover:text-emerald-400 transition">Play Challenge</a>
+        </div>
+    </nav>
+
+    <header class="h-screen hero-bg flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 class="text-6xl md:text-8xl mb-4">Born of Soil & Smoke</h1>
+        <p class="text-xl md:text-2xl max-w-2xl font-light italic text-stone-300">Experience the raw elegance of wood-fired cuisine set within a botanical sanctuary.</p>
+        <a href="#menu" class="mt-10 px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white transition font-bold uppercase tracking-widest text-sm">View Menu</a>
+    </header>
+
+    <section id="about" class="py-24 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl mb-6">Our History</h2>
+                <p class="text-lg leading-relaxed mb-6 text-stone-600 text-justify">
+                    What began in 2026 as a series of "renegade" forest dinners has evolved into a sanctuary for the senses. Founded by foragers Moses and Kristianne, <strong>Verdant Ember</strong> was born from a desire to return to the primitive roots of cooking.
+                </p>
+                <p class="text-lg leading-relaxed mb-6 text-stone-600 text-justify">
+                    We stand out because we have abolished the modern stove. Every dish is touched by the spirit of the woods cooked over reclaimed oak, cherrywood, and white-hot river stones. 
+                </p>
+                <div class="p-6 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-emerald-900 mb-2">Our Signature Philosophy</h3>
+                    <p class="text-emerald-800 italic">"The flame doesn't just cook the food; it seasons the soul."</p>
+                </div>
+            </div>
+            <div class="bg-stone-900 p-10 rounded-2xl shadow-2xl text-white relative">
+                <h3 class="text-3xl mb-6 font-bold text-emerald-400">Why We Stand Out</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">🌲</span>
+                        <div>
+                            <p class="font-bold">Botanical Immersion</p>
+                            <p class="text-stone-400 text-sm">Dine within a living ecosystem of 400+ species of ferns and moss.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">🔥</span>
+                        <div>
+                            <p class="font-bold">Zero-Electricity Hearth</p>
+                            <p class="text-stone-400 text-sm">Our best-selling Wagyu is seared at 800° using only wood-fired heat.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">🍄</span>
+                        <div>
+                            <p class="font-bold">Daily Foraged Goods</p>
+                            <p class="text-stone-400 text-sm">We source ingredients at dawn from secret groves, ensuring peak freshness.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-stone-900 text-stone-100 px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl mb-4">The Forager’s Collection</h2>
+                <p class="text-stone-400 italic">Hover over the items to explore the wilds.</p>
+                <div class="h-1 w-24 bg-emerald-500 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+                <!-- Item 1 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Fire-Kissed Bone Marrow</h3>
+                        <span class="text-emerald-400">₱1320</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Whipped with wild ramp butter and served with sourdough charred over glowing oakwood coals.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>The Mossy Grove Salad</h3>
+                        <span class="text-emerald-400">₱960</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Velvet microgreens and edible flowers anchored by a "forest soil" of dehydrated truffle pumpernickel.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Charred Asparagus & Egg</h3>
+                        <span class="text-emerald-400">₱960</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Asparagus stalks buried in white-hot coals, served with a 63-degree egg and lemon-thyme hollandaise.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Smoked Forest Broth</h3>
+                        <span class="text-emerald-400">₱840</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">A golden infusion of roasted roots and pine needles, poured over thinly sliced raw mushrooms.</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Ember-Roasted Wagyu</h3>
+                        <span class="text-emerald-400">₱5100</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Signature A6 Wagyu seared at 800 degrees and rested in a bed of smoking mountain thyme.</p>
+                </div>
+                <!-- Item 6 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Smoked Cedar Salmon</h3>
+                        <span class="text-emerald-400">₱2,040</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Slow-rested on a cedar plank with a resinous glaze of wild honey and toasted pine needles.</p>
+                </div>
+                <!-- Item 7 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>The Hunter’s Venison</h3>
+                        <span class="text-emerald-400">₱2,280</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Iron-rich venison loin seared rare over oakwood with a reduction of fermented huckleberries.</p>
+                </div>
+                <!-- Item 8 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Wild Mushroom Risotto</h3>
+                        <span class="text-emerald-400">₱880</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Foraged chanterelles and lion's mane sautéed on stone, folded into creamy parmesan risotto.</p>
+                </div>
+                <!-- Item 9 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Burnt Honey Cheesecake</h3>
+                        <span class="text-emerald-400">₱840</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Basque-style cheesecake with a smoky caramelized top and a floral wildflower essence.</p>
+                </div>
+                <!-- Item 10 -->
+                <div class="menu-card pb-6">
+                    <div class="flex justify-between font-bold text-xl mb-1 uppercase tracking-tight">
+                        <h3>Stone-Baked Pear</h3>
+                        <span class="text-emerald-400">₱720</span>
+                    </div>
+                    <p class="text-stone-400 text-sm">Bosc pear roasted in embers until tender, served with spruce-tip syrup and whipped goat cheese.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" class="py-24 px-8 bg-stone-950 text-white relative">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block px-4 py-1 border border-orange-500 text-orange-500 text-xs uppercase tracking-[0.3em] mb-4">Skill Challenge</div>
+            <h2 class="text-5xl mb-4 italic font-bold">The Master of Stone</h2>
+            <p class="mb-10 text-stone-400 max-w-2xl mx-auto font-light leading-relaxed">
+                Before you dine, you must master the heat. <span class="text-orange-400 font-bold underline underline-offset-4">Tap the stone rapidly</span> with your cursor to generate friction heat. Sear all three ingredients perfectly to prove your worth.
+            </p>
+            
+            <div id="game-container" class="mx-auto rounded-3xl border-4 border-stone-800 bg-black overflow-hidden shadow-2xl relative">
+                <!-- Instructions Overlay -->
+                <div id="tutorial" class="absolute inset-0 z-10 flex items-center justify-center bg-black/40 pointer-events-none transition-opacity duration-500">
+                    <p class="text-white text-xl font-bold border-2 border-white px-6 py-2 uppercase tracking-widest animate-pulse">Tap the stone to begin</p>
+                </div>
+
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                
+                <div id="game-over" class="hidden absolute inset-0 bg-stone-900/95 flex flex-col items-center justify-center p-12 z-20">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-5xl mb-2 font-bold italic tracking-tighter text-emerald-400">HEARTH MASTERED</h3>
+                    <p class="text-xl mb-10 text-stone-400 font-light text-center">Your mastery of the primitive flame is unparalleled. We await your reservation.</p>
+                    <button onclick="resetGame()" class="px-12 py-4 bg-orange-600 text-white font-bold uppercase tracking-widest hover:bg-orange-500 transition-all rounded-full">Relight the Fire</button>
+                </div>
+
+                <div class="absolute top-10 left-10 text-left pointer-events-none">
+                    <div id="stage-0" class="flex items-center gap-4 mb-4 transition-all opacity-100 scale-110">
+                        <div class="w-8 h-8 rounded-full border border-orange-500 flex items-center justify-center text-orange-500 text-xs">1</div>
+                        <span class="text-xs font-bold tracking-[0.2em]">CHANTERELLES</span>
+                    </div>
+                    <div id="stage-1" class="flex items-center gap-4 mb-4 transition-all opacity-30">
+                        <div class="w-8 h-8 rounded-full border border-stone-600 flex items-center justify-center text-stone-400 text-xs">2</div>
+                        <span class="text-xs font-bold tracking-[0.2em]">VENISON</span>
+                    </div>
+                    <div id="stage-2" class="flex items-center gap-4 transition-all opacity-30">
+                        <div class="w-8 h-8 rounded-full border border-stone-600 flex items-center justify-center text-stone-400 text-xs">3</div>
+                        <span class="text-xs font-bold tracking-[0.2em]">SIGNATURE WAGYU</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-500 py-16 text-center border-t border-white/5">
+        <div class="mb-8 text-2xl font-bold tracking-tighter text-emerald-400">VERDANT EMBER</div>
+        <p class="text-sm tracking-widest uppercase mb-4">Wild Flavors • Ancient Methods • Sustainable Soul</p>
+        <p class="text-xs opacity-50 italic">© 2026 Verdant Ember. Stay Wild.</p>
+    </footer>
+
+    <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const gameOverScreen = document.getElementById('game-over');
+    const tutorial = document.getElementById('tutorial');
+
+    const ingredients = [
+        { name: "Wild Chanterelles", min: 45, max: 65, time: 60, type: 'mushroom' },
+        { name: "Venison Loin", min: 60, max: 80, time: 100, type: 'meat' },
+        { name: "Signature Wagyu", min: 75, max: 95, time: 150, type: 'steak' }
+    ];
+
+    let currentStage = 0;
+    let heat = 0;
+    let searProgress = 0;
+    let gameActive = true;
+    let sparks = [];
+    let smoke = [];
+    let sizzleOffset = 0;
+
+    function handleTap(e) {
+        if (!gameActive) return;
+        
+        tutorial.style.opacity = '0';
+
+        const rect = canvas.getBoundingClientRect();
+        const tapX = (e.clientX || e.touches[0].clientX) - rect.left;
+        const tapY = (e.clientY || e.touches[0].clientY) - rect.top;
+
+        heat += 15; 
+        if (heat > 110) heat = 110;
+
+        for(let i=0; i < 8; i++) {
+            sparks.push({
+                x: tapX,
+                y: tapY,
+                vx: (Math.random() - 0.5) * 10,
+                vy: (Math.random() - 0.5) * 10,
+                life: 1,
+                color: `hsl(${Math.random() * 30 + 15}, 100%, 60%)` // Fire colors
+            });
+        }
+        
+        sizzleOffset = 5;
+    }
+
+    canvas.addEventListener('mousedown', handleTap);
+    canvas.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleTap(e);
+    }, {passive: false});
+
+   function drawStone() {
+        const grad = ctx.createRadialGradient(400, 320, 0, 400, 320, 350);
+        const r = 20 + (heat * 2);
+        const g = 15 + (heat * 0.5);
+        grad.addColorStop(0, `rgb(${r}, ${g}, 10)`); 
+        grad.addColorStop(0.3, '#292524'); 
+        grad.addColorStop(0.7, '#1c1917'); 
+        grad.addColorStop(1, '#000000');
+        
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.ellipse(400, 340, 340, 120, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "rgba(0,0,0,0.3)";
+        for(let i=0; i<20; i++) {
+            ctx.beginPath();
+            ctx.arc(300 + (i*10), 320 + (Math.sin(i)*20), 1, 0, Math.PI*2);
+            ctx.fill();
+        }
+    }
+
+    function drawIngredient() {
+        const stage = ingredients[currentStage];
+        const charFactor = searProgress / 100;
+        
+        ctx.save();
+        const sX = (Math.random() - 0.5) * sizzleOffset;
+        const sY = (Math.random() - 0.5) * sizzleOffset;
+        ctx.translate(400 + sX, 320 + sY);
+        
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = "rgba(0,0,0,0.8)";
+
+        if (stage.type === 'mushroom') {
+            for(let i=0; i<3; i++) {
+                ctx.save();
+                ctx.translate((i-1)*55, (i%2)*15);
+                ctx.rotate((i-1) * 0.2);
+                
+                const mushroomHue = 40 - (charFactor * 30); // Orange to Brown
+                ctx.fillStyle = `hsl(${mushroomHue}, 70%, ${40 - charFactor*20}%)`;
+                ctx.beginPath();
+                ctx.moveTo(-25, 0);
+                ctx.bezierCurveTo(-30, -40, 30, -40, 25, 0); // Fluted cap
+                ctx.fill();
+                
+                ctx.strokeStyle = "rgba(0,0,0,0.2)";
+                ctx.lineWidth = 1;
+                for(let g=-20; g<=20; g+=5) {
+                    ctx.beginPath(); ctx.moveTo(g, 0); ctx.lineTo(g/2, -15); ctx.stroke();
+                }
+                
+                ctx.fillStyle = `hsl(${mushroomHue}, 50%, ${30 - charFactor*20}%)`;
+                ctx.fillRect(-6, 0, 12, 25);
+                ctx.restore();
+            }
+        } else if (stage.type === 'meat') {
+            const meatR = 100 - (charFactor * 70);
+            ctx.fillStyle = `rgb(${meatR}, 20, 25)`;
+            
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 95, 50, 0.1, 0, Math.PI*2);
+            ctx.fill();
+            
+            ctx.strokeStyle = `rgba(255,255,255,${0.1 - charFactor*0.1})`;
+            for(let l=-80; l<80; l+=10) {
+                ctx.beginPath(); ctx.moveTo(l, -20); ctx.lineTo(l+10, 20); ctx.stroke();
+            }
+            
+            ctx.strokeStyle = `rgba(50,20,10,${charFactor})`;
+            ctx.lineWidth = 6;
+            ctx.stroke();
+        } else if (stage.type === 'steak') {
+            const steakR = 90 - (charFactor * 60);
+            ctx.fillStyle = `rgb(${steakR}, 30, 35)`;
+            
+            ctx.beginPath();
+            ctx.roundRect(-120, -60, 240, 120, 15);
+            ctx.fill();
+            
+            if (charFactor < 0.6) {
+                ctx.strokeStyle = `rgba(255,252,240,${0.4 - charFactor*0.4})`;
+                ctx.lineWidth = 3;
+                for(let m=0; m<5; m++) {
+                    ctx.beginPath();
+                    ctx.moveTo(-100, -40 + m*20);
+                    ctx.bezierCurveTo(-50, -60 + m*20, 50, -20 + m*20, 100, -40 + m*20);
+                    ctx.stroke();
+                }
+            }
+            
+            const searGrad = ctx.createLinearGradient(-120, -60, 120, 60);
+            searGrad.addColorStop(0, `rgba(0,0,0,0)`);
+            searGrad.addColorStop(0.5, `rgba(255,255,255,${heat/400})`);
+            searGrad.addColorStop(1, `rgba(0,0,0,${charFactor * 0.8})`);
+            ctx.fillStyle = searGrad;
+            ctx.roundRect(-120, -60, 240, 120, 15);
+            ctx.fill();
+        }
+        ctx.restore();
+    }
+
+    function update() {
+        if (!gameActive) return;
+        const stage = ingredients[currentStage];
+        
+        heat = Math.max(0, heat - 0.8);
+        sizzleOffset *= 0.9;
+
+        if (heat >= stage.min && heat <= stage.max) {
+            searProgress += (100 / stage.time);
+            if (Math.random() > 0.7) smoke.push({ x: 400 + Math.random()*80-40, y: 300, vy: -2, life: 1 });
+        } else if (heat > stage.max) {
+            searProgress -= 0.1; 
+        }
+
+        if (searProgress >= 100) {
+            if (currentStage < ingredients.length - 1) {
+                document.getElementById(`stage-${currentStage}`).style.opacity = '0.3';
+                currentStage++;
+                document.getElementById(`stage-${currentStage}`).style.opacity = '1';
+                searProgress = 0; heat = 0;
+            } else {
+                gameActive = false;
+                gameOverScreen.classList.remove('hidden');
+            }
+        }
+
+        sparks.forEach((p, i) => { p.x += p.vx; p.y += p.vy; p.life -= 0.03; if(p.life <= 0) sparks.splice(i,1); });
+        smoke.forEach((p, i) => { p.y += p.vy; p.life -= 0.015; if(p.life <= 0) smoke.splice(i,1); });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawStone();
+        
+        smoke.forEach(p => {
+            ctx.globalAlpha = p.life * 0.4;
+            ctx.fillStyle = '#999';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 25 * (2-p.life), 0, Math.PI*2);
+            ctx.fill();
+        });
+
+        drawIngredient();
+
+        sparks.forEach(p => {
+            ctx.globalAlpha = p.life;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(p.x, p.y, 4, 4);
+        });
+        ctx.globalAlpha = 1;
+
+        const stage = ingredients[currentStage];
+        ctx.fillStyle = "rgba(255,255,255,0.1)";
+        ctx.beginPath(); 
+        ctx.rect(250, 460, 300, 12); 
+        ctx.fill();
+        
+        ctx.fillStyle = "rgba(16, 185, 129, 0.4)";
+        ctx.fillRect(250 + (stage.min * 3), 460, (stage.max - stage.min) * 3, 12);
+        
+        ctx.fillStyle = heat > stage.max ? "#ef4444" : "#f59e0b";
+        ctx.fillRect(250, 460, Math.min(heat, 100) * 3, 12);
+        
+        ctx.fillStyle = "white"; ctx.font = "bold 10px Inter"; ctx.textAlign = "center";
+        ctx.fillText("TAP REPEATEDLY TO MAINTAIN HEAT", 400, 450);
+        
+        ctx.strokeStyle = "rgba(255,255,255,0.1)";
+        ctx.lineWidth = 4;
+        ctx.beginPath(); ctx.arc(400, 180, 30, 0, Math.PI*2); ctx.stroke();
+        ctx.strokeStyle = "#10b981";
+        ctx.beginPath(); ctx.arc(400, 180, 30, -Math.PI/2, (-Math.PI/2) + (Math.PI*2 * (searProgress/100))); ctx.stroke();
+
+        requestAnimationFrame(() => {
+            update();
+            draw();
+        });
+    }
+
+    function resetGame() {
+        currentStage = 0; searProgress = 0; heat = 0; gameActive = true;
+        gameOverScreen.classList.add('hidden');
+        tutorial.style.opacity = '1';
+        [0,1,2].forEach(i => {
+            document.getElementById(`stage-${i}`).style.opacity = i===0?'1':'0.3';
+        });
+    }
+
+    draw(); 
+</script>
+</body>
+</html>
